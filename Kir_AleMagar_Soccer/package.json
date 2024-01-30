@@ -1,12 +1,16 @@
 {
   "name": "kir-ale-magar-soccer",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+     "test": "ng test",
+    "generatecomponent": "ng generate component",
+    "generatepipe": "ng generate pipe",
+    "generatedirective": "ng generate directive"
+   
   },
   "private": true,
   "dependencies": {
