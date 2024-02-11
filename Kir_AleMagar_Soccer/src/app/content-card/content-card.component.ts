@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import {Content} from "../helper-files/content-interface";
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common'; 
+
+
 
 
 @Component({
@@ -10,6 +11,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './content-card.component.html',
   styleUrl: './content-card.component.scss'
 })
+
+
 export class ContentCardComponent {
- @Input() contentItem : any;
+  @Input() contentItem : any;
 }

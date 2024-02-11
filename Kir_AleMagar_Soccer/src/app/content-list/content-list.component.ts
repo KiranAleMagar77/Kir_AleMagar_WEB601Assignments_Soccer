@@ -4,22 +4,26 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 
 
+import { ContentCardComponent } from '../content-card/content-card.component';
+import { UclPipe } from '../ucl.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ContentCardComponent, UclPipe, FormsModule],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
 export class ContentListComponent implements OnInit{
-  @Input () contentList: Content[] = [];
+  
 
 
-  showContentIdTitle(contentItem:Content): void {
-    console.log(`ID: ${contentItem.id}, Title: ${contentItem.title}`);
-  }
+showContentIdTitle(contentItem: Content): void {
+  console.log(`ID: ${contentItem.id}, Title: ${contentItem.title}`);
+}
 
+@Input () contentList: Content[] = [];
   
   searchTitle: string = '';
   contentExists: boolean = false;
