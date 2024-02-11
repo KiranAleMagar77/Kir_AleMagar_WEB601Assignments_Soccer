@@ -1,4 +1,4 @@
-<div *ngFor="let contentItem of contentList; 
+<!-- <div *ngFor="let contentItem of contentList; 
             let isFirst = first" 
             class="content-card" [class.first-item]="isFirst">
 
@@ -24,4 +24,22 @@
         {{ contentItem.tags.join(', ') }}
     </p>
  
-</div>
+</div> -->
+
+<br>
+<input type="text" [(ngModel)]="searchTitle" placeholder="Enter title">
+<button (click)="checkContentExists()">Check Existence</button>
+
+
+<!-- Display search result message -->
+<p [ngStyle]="{'color': contentExists ? 'green' : 'red'}">{{ message }}</p>
+
+
+<h1>Champions league</h1>
+<app-content-card *ngFor="let contentItem of contentItems | contentTypeFilter: 'Champions league'" [contentItem]="contentItem"></app-content-card>
+
+<h2>National league</h2>
+<app-content-card *ngFor="let contentItem of contentItems | contentTypeFilter: 'National league'" [contentItem]="contentItem"></app-content-card>
+
+<h2>Empty as No set</h2>
+<app-content-card *ngFor="let contentItem of contentItems | contentTypeFilter: ' '" [contentItem]="contentItem"></app-content-card>

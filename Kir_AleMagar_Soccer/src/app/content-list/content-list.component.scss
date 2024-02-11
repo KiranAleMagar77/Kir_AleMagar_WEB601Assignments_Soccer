@@ -4,6 +4,7 @@
     padding: 25px;
     margin: 10px;
     border: 1px solid #121112;
+    text-align: left;
     
   }
   
@@ -13,9 +14,41 @@
     border: 2px solid rgb(140, 10, 10);
     
   }
-
   .contentItem.imgUrl.imgUrl {
     max-width: 100%;
     height: auto;
-    cursor: pointer; 
+    cursor: pointer; /* cursor, for clickable*/
+}
+
+h2{
+  color: yellow;
+}
+h2:first-of-type{
+  color: #f102be;
+}
+
+h2:last-of-type{
+  color: rgb(64, 249, 187);
+}
+
+button{
+  background-color: aquamarine;
+  padding: 5px 10px;
+  border: 0px;
+  outline: none;
+  transform: none;
+  // transition: all 0.3s ease-in;
+}
+button:hover{
+  // transform: scale(1.1);
+  background-color: #f102be;
+  color: white;
+}
+
+
+input{
+  padding: 5px 10px;
+  outline: none;
+  margin-right: 5px;
+
 }

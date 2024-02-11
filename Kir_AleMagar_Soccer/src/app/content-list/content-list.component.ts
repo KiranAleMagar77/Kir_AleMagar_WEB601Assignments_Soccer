@@ -16,6 +16,26 @@ export class ContentListComponent implements OnInit{
   @Input () contentList: Content[] = [];
 
 
+  showContentIdTitle(contentItem:Content): void {
+    console.log(`ID: ${contentItem.id}, Title: ${contentItem.title}`);
+  }
+
+  
+  searchTitle: string = '';
+  contentExists: boolean = false;
+  message: string = '';  
+  selectedTitle: string | null = null;
+
+
+  checkContentExists() {
+    const foundItem = this.contentItems.find(item => item.title.toLowerCase() === this.searchTitle.toLowerCase());
+    this.contentExists = !!foundItem;
+    this.message = foundItem ? 'Content item exists.' : 'Content item does not exist.';
+    this.selectedTitle = foundItem ? foundItem.title : null;
+
+  }
+
+
   ngOnInit(): void {
     this.contentList= [
     {
@@ -65,6 +85,14 @@ export class ContentListComponent implements OnInit{
       description: "The UEFA Champions League is an annual club football competition organized by the Union of European Football Associations (UEFA) and contested by top-division European clubs.",
       creator:"UEFA",
       imgUrl:"https://upload.wikimedia.org/wikipedia/commons/e/eb/Real_Madrid_C.F._the_Winner_Of_The_Champions_League_in_2018.jpg", 
+      type:"Soccer"
+    },
+    {
+      id: 7,
+      title: "Champions League (2017)",
+      description: "The UEFA Champions League is an annual club football competition organized by the Union of European Football Associations (UEFA) and contested by top-division European clubs.",
+      creator:"UEFA",
+      imgUrl:"https://static01.nyt.com/images/2017/06/04/sports/champions-top/champions-top-superJumbo.jpg?quality=75&auto=webp", 
       type:"Soccer"
     },
   ]
